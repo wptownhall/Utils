@@ -2,11 +2,19 @@
     "name": "wpth/utils",
     "description": "Collections of Some Utilities",
     "type": "library",
+    "keywords": ["wordpress", "utils", "utilities", "helpers", "boilerplate"],
+    "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
             "Wpth\\Utils\\": "src/"
         }
     },
+    "authors": [
+        {
+          "name": "HeyMehedi",
+          "email": "meehdi.2800@gmail.com"
+        }
+    ],
     "minimum-stability": "alpha",
     "require": {
         "php": ">=7.4"
