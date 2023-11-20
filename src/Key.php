@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  WPtownhall
+ * @author  HeyMehedi
  * @since   1.0.0
  * @version 1.0.0
  */
@@ -17,9 +17,5 @@ class Key {
 
 	public static function prefix( string $before = '', string $after = '' ): string {
 		return sprintf( '%s%s%s', $before, self::$project_name, $after );
-	}
-
-	private static function generate(): string {
-		return '';
 	}
 }

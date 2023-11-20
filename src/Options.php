@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  WPtownhall
+ * @author  HeyMehedi
  * @since   1.0.0
  * @version 1.0.0
  */
@@ -18,5 +18,9 @@ class Options {
 
 	public static function set( string $key, $value, $autoload = 'no' ): bool {
 		return update_option( self::key( $key ), $value, $autoload );
+	}
+
+	public static function delete( string $key ): bool {
+		return delete_option( self::key( $key ) );
 	}
 }

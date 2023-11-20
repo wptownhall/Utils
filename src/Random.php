@@ -1,32 +1,26 @@
 <?php
 /**
- * @author  WPtownhall
+ * @author  HeyMehedi
  * @since   1.0.0
  * @version 1.0.0
  */
 
 namespace WPTH\Utils;
 
-class Random {
-	/**
-	 * Randomly Generate a Number
-	 */
-	public static function number( int $len = 16 ): int {
-		$number = mt_rand( 1000000000000000, 9999999999999999 );
-
-		return $number;
+class Options {
+	private static function key( string $key ) {
+		return Key::prefix( '_', '_' ) . $key;
 	}
 
-	/**
-	 * Randomly Generate a Key
-	 */
-	public static function key( int $len = 40 ): string {
-		$characters = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTWYXZ";
-		$key        = '';
-		for ( $i = 0; $i < $len; $i++ ) {
-			$key .= $characters[rand( 0, $len )];
-		}
+	public static function get( string $key, $default = false ) {
+		return get_option( self::key( $key ), $default );
+	}
 
-		return $key;
+	public static function set( string $key, $value, $autoload = 'no' ): bool {
+		return update_option( self::key( $key ), $value, $autoload );
+	}
+
+	public static function delete( string $key ): bool {
+		return delete_option( self::key( $key ) );
 	}
 }
