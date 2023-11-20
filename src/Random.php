@@ -7,20 +7,21 @@
 
 namespace WPTH\Utils;
 
-class Options {
-	private static function key( string $key ) {
-		return Key::prefix( '_', '_' ) . $key;
+class Random {
+
+	public static function number( int $len = 16 ): int {
+		$number = mt_rand( 1000000000000000, 9999999999999999 );
+
+		return $number;
 	}
 
-	public static function get( string $key, $default = false ) {
-		return get_option( self::key( $key ), $default );
-	}
+	public static function key( int $len = 40 ): string {
+		$characters = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTWYXZ";
+		$key        = '';
+		for ( $i = 0; $i < $len; $i++ ) {
+			$key .= $characters[rand( 0, $len )];
+		}
 
-	public static function set( string $key, $value, $autoload = 'no' ): bool {
-		return update_option( self::key( $key ), $value, $autoload );
-	}
-
-	public static function delete( string $key ): bool {
-		return delete_option( self::key( $key ) );
+		return $key;
 	}
 }

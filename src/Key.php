@@ -8,14 +8,11 @@
 namespace WPTH\Utils;
 
 class Key {
-
-	public static $project_name = 'project_name';
-
 	public static function get( string $key ): string {
-		return sprintf( '%s_%s', self::prefix(), trim( $key ) );
+		return sprintf( '%s%s', self::prefix(), trim( $key ) );
 	}
 
-	public static function prefix( string $before = '', string $after = '' ): string {
-		return sprintf( '%s%s%s', $before, self::$project_name, $after );
+	public static function prefix(): string {
+		return sprintf( '%s%s%s', Config::get( 'key_prefix' ), Config::get( 'project_key', 'wpth' ), Config::get( 'key_suffix' ) );
 	}
 }
