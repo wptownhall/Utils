@@ -6,13 +6,13 @@
     "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
-            "Wpth\\Utils\\": "src/"
+            "WPTH\\Utils\\": "src/"
         }
     },
     "authors": [
         {
           "name": "HeyMehedi",
-          "email": "meehdi.2800@gmail.com"
+          "email": "mehedi.2800@gmail.com"
         }
     ],
     "minimum-stability": "alpha",
