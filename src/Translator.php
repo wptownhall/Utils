@@ -5,7 +5,7 @@
  * @version 1.0.0
  */
 
-namespace WPTH\Utils;
+namespace HeyMehedi\Utils;
 
 class Translator {
 	public static function encode( string...$items ): string {

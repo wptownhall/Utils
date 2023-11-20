@@ -5,7 +5,7 @@
  * @version 1.0.0
  */
 
-namespace WPTH\Utils;
+namespace HeyMehedi\Utils;
 
 class Config {
 
@@ -15,7 +15,7 @@ class Config {
 
 	private static function file(): array {
 		$path = __DIR__ . '/../../../..';
-		$file = $path . '/wpth-utils-config.php';
+		$file = $path . '/heymehedi-utils-config.php';
 
 		if ( file_exists( $file ) ) {
 			return require_once $file;
@@ -26,7 +26,7 @@ class Config {
 
 	private static function default( string $key ): string {
 		$arr = [
-			'project_key' => 'wpth',
+			'project_key' => 'heymehedi_utils',
 			'key_prefix'  => '_',
 			'key_suffix'  => '_',
 		];

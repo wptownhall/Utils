@@ -5,7 +5,7 @@
  * @version 1.0.0
  */
 
-namespace WPTH\Utils;
+namespace HeyMehedi\Utils;
 
 class Key {
 	public static function get( string $key ): string {
@@ -13,6 +13,6 @@ class Key {
 	}
 
 	public static function prefix(): string {
-		return sprintf( '%s%s%s', Config::get( 'key_prefix' ), Config::get( 'project_key', 'wpth' ), Config::get( 'key_suffix' ) );
+		return sprintf( '%s%s%s', Config::get( 'key_prefix' ), Config::get( 'project_key', 'heymehedi_utils' ), Config::get( 'key_suffix' ) );
 	}
 }

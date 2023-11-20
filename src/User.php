@@ -5,18 +5,22 @@
  * @version 1.0.0
  */
 
-namespace WPTH\Utils;
+namespace HeyMehedi\Utils;
 
 class User {
-	public static function data( int $user_id ) {
+	private static function includes() {
 		if ( ! function_exists( 'get_userdata' ) ) {
 			require_once ABSPATH . WPINC . '/pluggable.php';
 		}
+	}
+
+	public static function data( int $user_id ) {
+		self::includes();
 
 		return get_userdata( $user_id );
 	}
 
-	public static function display_name( int $user_id ) {
+	public static function display_name( int $user_id ): string {
 		$user_data = self::data( $user_id );
 
 		if ( $user_data ) {
@@ -29,6 +33,6 @@ class User {
 			}
 		}
 
-		return __( 'Invalid User', 'wpth' );
+		return '';
 	}
 }
